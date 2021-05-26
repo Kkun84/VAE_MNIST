@@ -1,2 +1,2 @@
 #!/bin/bash
-docker stop vae_test
+docker stop vae_mnist

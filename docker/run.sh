@@ -13,9 +13,9 @@ docker run \
     -it \
     --gpus=all \
     --ipc=host \
-    --name=vae_test \
+    --name=vae_mnist \
     --env-file=.env \
     --volume=$PWD:/workspace \
     --volume=$DATASET:/dataset \
-    vae_test:latest \
+    vae_mnist:latest \
     ${@-fish}

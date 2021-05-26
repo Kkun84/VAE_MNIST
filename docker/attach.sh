@@ -1,2 +1,2 @@
 #!/bin/bash
-docker attach vae_test
+docker attach vae_mnist

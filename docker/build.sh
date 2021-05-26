@@ -5,4 +5,4 @@ docker build \
     -f "Dockerfile" \
     --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg USER=hoge --build-arg PASSWORD=fuga \
     -t \
-    vae_test:latest "."
+    vae_mnist:latest "."
