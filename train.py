@@ -65,8 +65,6 @@ def main():
     )
     trainer.fit(model, datamodule)
 
-    trainer.test()
-
 
 if __name__ == '__main__':
     main()
