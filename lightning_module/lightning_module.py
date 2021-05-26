@@ -66,12 +66,12 @@ class MyLightningModule(VAE, LightningModule):
     def log_images(self, test_input: Tensor):
         recons = self.generate(test_input)
 
-        save_dir = Path(self.logger.log_dir, self.logger.name)
+        save_dir = Path(self.logger.log_dir, 'images')
         save_dir.mkdir(exist_ok=True)
 
         save_image(
             recons.data,
-            save_dir / f"recons-{self.logger.name}-{self.current_epoch}.png",
+            save_dir / f"recons_image-{self.current_epoch}.png",
             normalize=False,
             nrow=12,
             pad_value=0.5,
@@ -79,7 +79,7 @@ class MyLightningModule(VAE, LightningModule):
 
         save_image(
             test_input.data,
-            save_dir / f"real_img-{self.logger.name}-{self.current_epoch}.png",
+            save_dir / f"real_image-{self.current_epoch}.png",
             normalize=False,
             nrow=12,
             pad_value=0.5,
@@ -89,7 +89,7 @@ class MyLightningModule(VAE, LightningModule):
         error = torch.cat([error * (error > 0), error * 0, -error * (error < 0)], 1)
         save_image(
             error.data,
-            save_dir / f"error-{self.logger.name}-{self.current_epoch}.png",
+            save_dir / f"error_image-{self.current_epoch}.png",
             normalize=False,
             nrow=12,
             pad_value=0.5,
@@ -98,7 +98,7 @@ class MyLightningModule(VAE, LightningModule):
         samples = self.sample(12 ** 2)
         save_image(
             samples.cpu().data,
-            save_dir / f"sample-{self.logger.name}-{self.current_epoch}.png",
+            save_dir / f"sample_image-{self.current_epoch}.png",
             normalize=False,
             nrow=12,
             pad_value=0.5,
