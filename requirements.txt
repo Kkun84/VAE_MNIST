@@ -1,0 +1,8 @@
+hydra-core
+docopt
+
+pytorch_lightning
+torchinfo
+
+black
+flake8

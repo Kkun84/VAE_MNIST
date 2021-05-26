@@ -1,0 +1,17 @@
+batch_size: 64
+lr: 0.001
+weight_decay: 0
+max_epochs: 1000
+image_size: 32
+latent_dim: 64
+hidden_dims:
+- 128
+- 64
+- 32
+- 16
+num_workers: 4
+gpus: 1
+seed: 0
+in_channels: 1
+train_data_size: 60000
+val_data_size: 10000
